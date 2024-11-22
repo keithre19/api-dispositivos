@@ -34,12 +34,6 @@
       "target": "api::category.category",
       "inversedBy": "products"
     },
-    "carts": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::cart.cart",
-      "mappedBy": "product"
-    },
     "order_details": {
       "type": "relation",
       "relation": "oneToMany",
@@ -47,13 +41,13 @@
       "mappedBy": "product"
     },
     "image": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": true,
-      "required": true
+      ]
     }
   }
 }
