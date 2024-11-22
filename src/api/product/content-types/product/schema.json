@@ -28,18 +28,6 @@
       "type": "integer",
       "required": true
     },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "products"
-    },
-    "order_details": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::order-detail.order-detail",
-      "mappedBy": "product"
-    },
     "image": {
       "type": "media",
       "multiple": true,
@@ -48,6 +36,11 @@
         "images",
         "files"
       ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
     }
   }
 }

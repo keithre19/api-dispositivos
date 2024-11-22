@@ -4,19 +4,14 @@
   "info": {
     "singularName": "order",
     "pluralName": "orders",
-    "displayName": "Order"
+    "displayName": "Order",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "users_permissions_user": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "orders"
-    },
     "date": {
       "type": "date"
     },
@@ -37,11 +32,15 @@
       "type": "decimal",
       "required": true
     },
-    "order_details": {
+    "users_permissions_user": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::order-detail.order-detail",
-      "mappedBy": "order"
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "cart": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cart.cart"
     }
   }
 }
